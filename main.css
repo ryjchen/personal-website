@@ -1,0 +1,425 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Varela Round', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+nav {
+  margin: 1% 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+p {
+  font-size: .95em;
+  margin-bottom: 1.8em;
+}
+.name a {
+  color: #000;
+}
+h2,
+h3, 
+h4 {
+  margin-top: 0;
+  margin-bottom: 1%;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 3%;
+}
+h4 {
+  color: #3acec2;
+}
+a {
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+/* ---- Navigation ---- */
+.name a,
+.main-nav a {
+  text-align: center;
+  display: block;
+}
+.main-nav a {
+  font-size: 1.15em;
+  color: #000;
+  text-transform: uppercase;
+  padding: 10px 50px;
+}
+.main-nav a:hover {
+  color: #3acec2;
+}
+nav a.selected {
+  color: #3acec2;
+}
+
+/* ---- Layout Containers ---- */
+.main-header {
+  padding-bottom: .5em;
+}
+.banner,
+.main-footer {
+  text-align: center;
+}
+.main-footer {
+  background: #d9e4ea;
+  /*background-image: url("img/grey.jpg");*/
+  padding: 1em 0;
+  margin: 0;
+  /*position: absolute;*/
+}
+.main-header {
+  text-align: center;
+  padding: 1em 0 0 0;
+}
+.photo-container {
+  text-align: center;
+  margin-bottom: 3em;
+  flex: 1;
+}
+
+/* ---- Page Elements ---- */
+.name {
+  font-size: 1.65em;
+  letter-spacing: .15em;
+  font-weight: 800;
+  line-height: 1;
+}
+.photo {
+  position: relative;
+  line-height: 0;
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+.photo-container img {
+  max-width: 90%;
+}
+
+.button {
+  width: 50%;
+  font-weight: 700;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 0;
+  border: 2px solid #3acec2;
+  background: #3acec2;
+  border-radius: .5em;
+  margin: auto;
+  color: #fff;
+}
+.internal {
+  color: #3acec2;
+}
+.internal-size{
+  font-size: 1.1em;
+  margin-bottom: 2%;
+}
+
+/* ---- Photo Overlay ---- */
+.photo-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0; 
+  left: 0;
+  padding: 0 20px;
+
+  display: flex; /* For centering text inside .photo-overlay */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+/*  background: rgba(0,0,0, .5);*/ /*anyway to fit onto the image?*/
+}
+
+/* --------------------------
+  SVG Styles
+--------------------------- */
+.svg-logo {
+  display: block;
+  margin: 2em auto -2.5em;
+  width: 35%;
+}
+@-webkit-keyframes offset {
+ 100% {
+    stroke-dashoffset: 0;
+  } 
+} /*for my RYC svg*/
+
+/***************************************
+ PAGE: PORTFOLIO 
+****************************************/
+.content {
+  padding: 5% 5%;
+}
+
+/***************************************
+ PAGE: ABOUT
+****************************************/
+.profile-photo {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto 30px;
+  border-radius: 100%;
+}
+
+/***************************************
+ PICTURES
+****************************************/
+.contact-row, 
+.about-row,
+.ideation,
+.fbdesignjam,
+.gallery {
+  justify-content: center;  
+  padding: 5% 10%;  
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+@media (max-width: 700px) {
+  .textstroke {
+    display: none;
+  }
+  .mobile {
+    font-size: 1em;
+    font-weight: 575;
+  }
+  .photo {
+    margin-bottom: 0;
+  }
+}
+/***************************************
+ Mobile Screen
+****************************************/
+@media (min-width: 700px) {
+  .main-header,
+  .main-nav,
+  .contact-row,
+  .content,
+  .content-col{
+    display: flex; 
+  }
+  .content {
+    flex-wrap: wrap;
+/*    justify-content: flex-start;*/
+  }
+
+/*  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .gal-photo {
+    box-flex: auto;
+    flex: auto;
+    width: 300px;
+  }
+  .gal-photo img {
+    width: 100%;
+    height: auto;
+  }*/
+
+  .contact-col{
+    flex: 1;
+  }
+  .textstroke { 
+  color: #fff;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;  /*to make the words legible*/
+}
+/*  .content-col {
+    flex-direction: column;
+    flex: 1;
+  }*/
+  .button {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .secondary {
+    padding-left: 5%;  
+  }
+  .mobile {
+    display: none;
+  }
+  .name {
+    font-size: 1.55em;
+    letter-spacing: .15em;
+    margin: 0;
+    padding-top: 15px;
+  }
+  .main-nav {
+    border-bottom: 1px solid #000;
+    /*background-color: #d9e4ea;*/
+  }
+  .profile-photo {
+    display: block;
+    margin: 0 auto;
+  }
+  svg {
+    margin: 1em auto 1em;
+    width: 25%;
+  }
+  .profile-photo {
+    float: left;
+    margin: 0 5% 1% 0;
+  }
+  .pics {
+    width: 30%;
+  }
+  .grow {
+    transition: all .3s ease-in-out;
+  }
+  .grow:hover {
+    transform: scale(2);
+/*    transform-origin: left bottom;*/
+  }
+  .grow-horz:hover {
+    transform: scale(2.5);
+/*    transform-origin: left bottom;*/
+  }
+
+  /* ================================= 
+  Photo Overlay Transitions
+==================================== */
+
+.photo-overlay {
+  opacity: 0;
+  transition: opacity .5s;
+}
+.photo-overlay:hover {
+  opacity: 1;
+}
+
+/* ================================= 
+  Button Transitions
+==================================== */
+
+.button {
+  transition: background .3s, color .3s;
+}
+.button:hover {
+  color: #000;
+  background: #3acec2;
+}
+
+/* ================================= 
+  Image Transforms & Transitions
+==================================== */
+
+img {
+  transition: transform .5s cubic-bezier(.7, -0.39, .31, 1.38);
+  transform-origin:  0 0;
+}
+
+.photo img {
+  transform-origin: 0 0;  
+}
+
+.photo:hover img {
+  transform: scale(1.2);
+}
+
+}
+
+/***************************************
+ Tablet Screen
+****************************************/
+@media (min-width: 700px) and (max-width: 1100px) { 
+  .photo-container:nth-child(2n+1) {
+/*    margin-left: 0;*/
+    clear: left;
+  }
+/*  .gallery:nth-child(3n+1) {
+    clear: left;
+  }
+*/  .main-header {
+    padding: 2.5em 0 0 0;
+  }
+  .photo-container {
+    flex-basis: 35%;
+  }
+}
+
+/***************************************
+ Full Size
+****************************************/
+@media (min-width: 1100px) { 
+  .photo-container:nth-child(3n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+/*  .gallery:nth-child(5n+1) {
+    margin-left: 0;
+    clear: left;
+  }*/
+  .main-header {
+    padding: 2.5em 0 0 0;
+  }
+
+/* Header Animation for Full Size Screen */
+  .r,
+  .y,
+  .c {
+    stroke: #000;
+    stroke-width: 8;
+  }
+  .r {
+    stroke-dasharray: 550;
+    stroke-dashoffset: 550;
+    -webkit-animation: offset 2.6s linear forwards; 
+  }
+  .y {
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
+    -webkit-animation: offset 2s linear forwards; 
+  }
+  .c {
+    stroke-dasharray: 325;
+    stroke-dashoffset: 325;
+    -webkit-animation: offset 2s linear forwards; 
+  }
+}
+
+@media (min-width: 1155px) {
+  .main-nav a {
+    font-size: 1.3em;
+    padding: 20px 75px 10px;
+    margin: 0 10%;
+  }
+/*  .svg-logo {
+    margin: 1em auto 1em;
+  }*/
+  
+  .primary {
+    flex: 2;
+  }
+}
+
+/*************************
+Clearfix
+*************************/
+.Site {
+  display: flex;
+  min-height: 94vh;
+  flex-direction: column;
+}

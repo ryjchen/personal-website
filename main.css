@@ -14,6 +14,7 @@ nav {
   padding: 0;
   list-style: none;
 }
+
 p {
   font-size: .95em;
   margin-bottom: 1.8em;
@@ -88,9 +89,6 @@ nav a.selected {
   flex: 1;
 }
 
-.contact-row {
-
-}
 /* ---- Page Elements ---- */
 .name {
   font-size: 1.65em;
@@ -408,15 +406,6 @@ img {
 }
 
 @media (min-width: 1155px) {
-  .main-nav a {
-    font-size: 1.3em;
-    padding: 20px 75px 10px;
-    margin: 0 10%;
-  }
-/*  .svg-logo {
-    margin: 1em auto 1em;
-  }*/
-  
   .primary {
     flex: 2;
   }

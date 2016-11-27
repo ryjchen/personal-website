@@ -5,16 +5,10 @@
   box-sizing: border-box;
 }
 body {
-  /*font-family: 'Varela Round', sans-serif;*/
+  font-family: 'Varela Round', sans-serif;
   line-height: 1.6;
   margin: 0;
 }
-nav {
-  margin: 1% 0 0 0;
-  padding: 0;
-  list-style: none;
-}
-
 p {
   font-size: .95em;
   margin-bottom: 1.8em;
@@ -28,13 +22,15 @@ h4 {
   margin-top: 0;
   margin-bottom: 1%;
 }
-
 h2 {
   text-align: center;
   margin-bottom: 3%;
 }
 h4 {
-  color: #3acec2;
+  color: #3acec2 !important;
+}
+.black {
+  color: #000 !important;
 }
 a {
   text-decoration: none;
@@ -48,76 +44,69 @@ img {
 ==================================== */
 /* ---- Navigation ---- */
 .name a,
-.main-nav a {
+.navbar a {
   text-align: center;
-  display: block;
+  display: inline-block;
 }
-.main-nav a {
-  /*font-size: 1.15em;*/
+nav {
+  margin: 1% 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+.navbar {
+  background-color: #fff;
+  margin-top: 0;
+  padding-top: 8px;
+}
+.navbar a {
   color: #000;
   text-transform: uppercase;
-  padding: 10px 50px;
+  padding: 10px 15px 0px;
 }
-.main-nav a:hover {
+.navbar a:hover {
   color: #3acec2;
+  text-decoration: none;
 }
 nav a.selected {
   color: #3acec2;
 }
 
-/* ---- Layout Containers ---- */
+/* ---- Header and Footer ---- */
 .main-header {
-  padding-bottom: .5em;
+  margin-bottom: 2.5%;
+  margin-top: 4%;
 }
-.banner,
-.main-footer {
-  text-align: center;
-}
-.main-footer {
-  background: #d9e4ea;
-  padding: 1em 0;
-  margin: 0;
-  /*position: absolute;*/
-}
-.main-header {
-  text-align: center;
-  padding: 1em 0 0 0;
-}
-.photo-container {
-  text-align: center;
-  margin-bottom: 3em;
-  flex: 1;
-}
-
-/* ---- Page Elements ---- */
 .name {
   font-size: 1.65em;
   letter-spacing: .15em;
   font-weight: 800;
   line-height: 1;
 }
+.main-header {
+  text-align: center;
+}
+.main-footer {
+  background: #333;
+  padding: 1em 0;
+  margin: 0;
+  color: white;
+  font-weight: 100;
+  letter-spacing: .075em;
+  text-align: center;
+}
+
+/* ---- Page Elements ---- */
 .photo {
   position: relative;
   line-height: 0;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   overflow: hidden;
 }
-.photo-container img {
-  max-width: 90%;
-}
-
-.button {
-  width: 50%;
-  font-weight: 700;
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 5px 0;
-  border: 2px solid #3acec2;
-  background: #3acec2;
-  border-radius: .5em;
-  margin: auto;
-  color: #fff;
+.textstroke {
+  color: white;
+  font-weight: 200;
+  font-size: 1em;
+  letter-spacing: .2em;
 }
 .internal {
   color: #3acec2;
@@ -127,6 +116,25 @@ nav a.selected {
   margin-bottom: 2%;
 }
 
+/* --------------------------
+  SVG Styles
+--------------------------- */
+.svg-logo {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 2%;
+  padding-left: 1%;
+}
+@-webkit-keyframes offset {
+ 100% {
+    stroke-dashoffset: 0;
+  } 
+} /*for my RYC svg*/
+
+/***************************************
+ PAGE: PORTFOLIO 
+****************************************/
 /* ---- Photo Overlay ---- */
 .photo-overlay {
   position: absolute;
@@ -140,28 +148,11 @@ nav a.selected {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-/*  background: rgba(0,0,0, .5);*/ /*anyway to fit onto the image?*/
 }
 
-/* --------------------------
-  SVG Styles
---------------------------- */
-.svg-logo {
-  display: block;
-  margin: 2em auto -2.5em;
-  /*width: 35%;*/
-}
-@-webkit-keyframes offset {
- 100% {
-    stroke-dashoffset: 0;
-  } 
-} /*for my RYC svg*/
-
-/***************************************
- PAGE: PORTFOLIO 
-****************************************/
-.content {
-  padding: 3% 5%;
+.port {
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 /***************************************
@@ -173,101 +164,113 @@ nav a.selected {
   margin: 0 auto 30px;
   border-radius: 100%;
 }
+.about-container{
+  margin: 8% 10% 0 10%;
+  padding: 3% 10%; 
+}
+
+/***************************************
+ PAGE: CONTACT
+****************************************/
+.contact-info a {
+  color: #3acec2;
+}
+.contact-info {
+  padding-left: 0;
+  padding-right: 25%;
+}
+.contact-info li {
+  display: block;
+  max-width: 100%;
+  padding-bottom: 5px;
+}
+.contact-container {
+  margin: 2% 10% 0 10%;
+  padding-bottom: 5%;
+  float: none;
+}
 
 /***************************************
  PICTURES
 ****************************************/
-.contact-row, 
+/*.contact-row, */
 .about-row,
 .gallery {
   justify-content: center;  
-  padding: 5% 10%;  
+  padding: 3% 10%;  
 }
 
 .ideation,
 .fbdesignjam {
   justify-content: center;  
   padding: 2% 10%;  
-  margin: 40px 5% 40px 5%;
+  margin: 20px 5% 40px 5%;
 }
 
 /* ================================= 
   Media Queries
 ==================================== */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .textstroke {
     display: none;
+    font-weight: 100;
   }
   .mobile {
     font-size: 1em;
     font-weight: 575;
+    padding-top: 4%;
+    padding-bottom: 3%;
+    color: black;
+    text-decoration: none;
   }
   .photo {
     margin-bottom: 0;
   }
+/*  .photo-container {
+    margin-bottom: 1em;
+  }*/
   .svg-logo {
-    width: 35%;
+    width: 50%;
+    max-height: 100px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .navbar a {
+    display: block;
   }
   .name {
     font-size: 1.5em;
+  }
+  .main-header {
+    margin-top: 28%;
+  }
+  .port-row {
+    text-align: center;
+  }
+  .contact-info {
+    padding-right: 35%;
+  }
+  h1 {
+    margin-top: 0 !important;
   }
 }
 /***************************************
  Mobile Screen
 ****************************************/
-@media (min-width: 700px) {
+@media (min-width: 768px) {
   .main-header,
-  .main-nav,
-  .contact-row,
+  /*.main-nav,*/
+  /*.contact-row,*/
   .content,
   .content-col{
     display: flex; 
   }
-  .content {
+/*  .content {
     flex-wrap: wrap;
-/*    justify-content: flex-start;*/
-  }
-
-/*  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-  .gal-photo {
-    box-flex: auto;
-    flex: auto;
-    width: 300px;
-  }
-  .gal-photo img {
-    width: 100%;
-    height: auto;
   }*/
-
-  .contact-col{
-    flex: 1;
-  }
-  .textstroke { 
-  color: #fff;
-  text-shadow:
-  -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-  1px 1px 0 #000;  /*to make the words legible*/
-  }
-/*  .content-col {
-    flex-direction: column;
-    flex: 1;
-  }*/
-  .button {
-    margin-top: auto;
-    align-self: flex-start;
-  }
   .main-header {
     flex-direction: column;
     align-items: center;
-  }
-  .secondary {
-    padding-left: 5%;  
   }
   .mobile {
     display: none;
@@ -278,21 +281,16 @@ nav a.selected {
     margin: 0;
     padding-top: 15px;
   }
-  .main-nav {
-    border-bottom: 1px solid #000;
-    /*background-color: #d9e4ea;*/
-  }
   .profile-photo {
     display: block;
     margin: 0 auto;
   }
-  svg {
-    margin: 1em auto 1em;
-    width: 25%;
+  .photo-overlay {
+    background: rgba(0,0,0, .75);
   }
   .profile-photo {
     float: left;
-    margin: 0 5% 1% 0;
+    margin: 0 6% 1% 0;
   }
   .pics {
     width: 30%;
@@ -309,85 +307,7 @@ nav a.selected {
 /*    transform-origin: left bottom;*/
   }
 
-  /* ================================= 
-  Photo Overlay Transitions
-==================================== */
-
-.photo-overlay {
-  opacity: 0;
-  transition: opacity .5s;
-}
-.photo-overlay:hover {
-  opacity: 1;
-}
-
-/* ================================= 
-  Button Transitions
-==================================== */
-
-.button {
-  transition: background .3s, color .3s;
-}
-.button:hover {
-  color: #000;
-  background: #3acec2;
-}
-
-/* ================================= 
-  Image Transforms & Transitions
-==================================== */
-
-img {
-  transition: transform .5s cubic-bezier(.7, -0.39, .31, 1.38);
-  transform-origin:  0 0;
-}
-
-.photo img {
-  transform-origin: 0 0;  
-}
-
-.photo:hover img {
-  transform: scale(1.2);
-}
-
-}
-
-/***************************************
- Tablet Screen
-****************************************/
-@media (min-width: 700px) and (max-width: 1100px) { 
-  .photo-container:nth-child(2n+1) {
-/*    margin-left: 0;*/
-    clear: left;
-  }
-/*  .gallery:nth-child(3n+1) {
-    clear: left;
-  }
-*/  .main-header {
-    padding: 2.5em 0 0 0;
-  }
-  .photo-container {
-    flex-basis: 35%;.
-  }
-}
-
-/***************************************
- Full Size
-****************************************/
-@media (min-width: 1100px) { 
-  .photo-container:nth-child(3n+1) {
-    margin-left: 0;
-    clear: left;
-  }
-/*  .gallery:nth-child(5n+1) {
-    margin-left: 0;
-    clear: left;
-  }*/
-  .main-header {
-    padding: 2.5em 0 0 0;
-  }
-
-/* Header Animation for Full Size Screen */
+  /* Header Animation for Tablet and Full Size Screens */
   .r,
   .y,
   .c {
@@ -409,11 +329,65 @@ img {
     stroke-dashoffset: 325;
     -webkit-animation: offset 2s linear forwards; 
   }
+
+  /* ================================= 
+  Photo Overlay Transitions
+==================================== */
+
+.photo-overlay {
+  opacity: 0;
+  transition: opacity .5s;
+}
+.photo-overlay:hover {
+  opacity: 1;
 }
 
-@media (min-width: 1155px) {
-  .primary {
-    flex: 2;
+/* ================================= 
+  Image Transforms & Transitions
+==================================== */
+
+img {
+  transition: transform .5s cubic-bezier(.7, -0.39, .31, 1.38);
+  transform-origin:  0 0;
+}
+
+.photo img {
+  transform-origin: 0 0;  
+}
+
+.photo:hover img {
+  transform: scale(1.05);
+}
+
+}
+
+/***************************************
+ Tablet Screen
+****************************************/
+@media (min-width: 700px) and (max-width: 1100px) { 
+  /*.photo-container:nth-child(2n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+  .photo-container {
+    flex-basis: 35%;
+    margin-left: 4%;
+  }*/
+}
+
+/***************************************
+ Full Size
+****************************************/
+@media (min-width: 1100px) { 
+  /*.photo-container:nth-child(3n+1) {
+    margin-left: 0;
+    clear: left;
+  }
+  .photo-container {
+    margin-left: 4%;
+  }*/
+  .contact-container {
+    margin: 2% 20% 0 20%;
   }
 }
 
@@ -422,6 +396,6 @@ Clearfix
 *************************/
 .Site {
   display: flex;
-  min-height: 94vh;
+  min-height: 95vh;
   flex-direction: column;
 }
